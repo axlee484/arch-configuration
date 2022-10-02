@@ -1,0 +1,49 @@
+OS: Arch
+Shell: fish/zsh/bash
+Swap: 8-10GiB
+DE: GNOME
+Icon: Kora
+Cursor: Bibata-Modern-rainbow
+Fonts: FiraCode (nerd-fonts-fira-code), Noto(noto-fonts,noto-fonts-extra,noto-fonts-emoji,noto-fonts-cjk)
+Terminal: gnome-terminal-fedora/gnome-terminal
+Terminal Font: FiraCode Nerd Font
+WM: mutter-rounded
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+R E M O V E bloat packages (sudo pacman -Rscu package_name ) if you don't use        X
+gnome-maps gnome-books gnome-contacts gnome-software gnome-weather totem epiphany    X
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+IF gnome-terminal doesn't work try cheking locales, they should be
+LANG=en_US.UTF-8
+
+to set locale
+  - nano /etc/locale.gen
+  - /* uncomment #en_US.UTF-8 line by removing # from the beginning and save file*/
+  - locale-gen
+  - nano /etc/locale.conf
+  - /* type LANG=en_US.UTF-8 and save */
+
+
+install fish (sudo pacman -S fish)
+install git (sudo pacman -S git)
+
+install yay
+  - git clone https://aur.archlinux.org/yay
+  - cd yay
+  - makepkg -si
+
+Some good packages (sudo pacman -S package_name OR yay -S package_name)
+gnome-boxes (best virtualization IMO)
+dolphin-emu (GameCube emulator to play pokemon etc)
+steam (will also install required drivers for graphics if not already)
+mesa 
+lib32-mesa
+mesa-vdpau
+lib32-mesa-vdpau
+nautilus (file manager gtk)
+transmission-gtk (torrent client gtk)
+openoffice-bin
+visual-studio-code-bin
+google-chrome
+gnome-browser-connector (for enabling extension support via browser)
